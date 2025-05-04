@@ -35,7 +35,23 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define TAP_CODE_DELAY 5
 
-#define POINTING_DEVICE_AUTO_MOUSE_ENABLE
-#define AUTO_MOUSE_DEFAULT_LAYER 2
+// #define POINTING_DEVICE_AUTO_MOUSE_ENABLE
 
-#define DYNAMIC_KEYMAP_LAYER_COUNT 8
+// It should be lower than the navigation layer to avoid taking precedence.
+// #define AUTO_MOUSE_DEFAULT_LAYER 1
+
+// Default value.
+#define TAPPING_TERM 200
+
+// Why not.
+#define HOLD_ON_OTHER_KEY_PRESS
+
+// Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
+// Example: Quick Shift hold after Space tap. 
+#define QUICK_TAP_TERM 0
+
+// Leave a quick tap for `TT`s keys.
+#define QUICK_TAP_TERM_PER_KEY
+
+// For `TT`s keys.
+#define TAPPING_TOGGLE 2

@@ -23,75 +23,47 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_universal(
-    KC_ESC   , KC_1     , KC_2     , KC_3     , KC_4     , KC_5     ,                                  KC_6     , KC_7     , KC_8     , KC_9     , KC_0     , KC_MINS  ,
-    KC_DEL   , KC_Q     , KC_W     , KC_E     , KC_R     , KC_T     ,                                  KC_Y     , KC_U     , KC_I     , KC_O     , KC_P     , KC_INT3  ,
-    KC_TAB   , KC_A     , KC_S     , KC_D     , KC_F     , KC_G     ,                                  KC_H     , KC_J     , KC_K     , KC_L     , KC_SCLN  , S(KC_7)  ,
-    MO(1)    , KC_Z     , KC_X     , KC_C     , KC_V     , KC_B     , KC_RBRC  ,              KC_NUHS, KC_N     , KC_M     , KC_COMM  , KC_DOT   , KC_SLSH  , KC_RSFT  ,
-    _______  , KC_LCTL  , KC_LALT  , KC_LGUI,LT(1,KC_LNG2),LT(2,KC_SPC),LT(3,KC_LNG1),    KC_BSPC,LT(2,KC_ENT),LT(1,KC_LNG2),KC_RGUI, _______ , KC_RALT  , KC_PSCR
+    KC_GRV, KC_1 , KC_2 , KC_3 , KC_4 , KC_5               ,                                              KC_6                , KC_7 , KC_8   , KC_9  , KC_0   , KC_MINS             ,
+    KC_ESC, KC_Q , KC_W , KC_E , KC_R , KC_T               ,                                              KC_Y                , KC_U , KC_I   , KC_O  , KC_P   , KC_EQL              ,
+    KC_TAB, KC_A , KC_S , KC_D , KC_F , KC_G               ,                                              KC_H                , KC_J , KC_K   , KC_L  , KC_SCLN, MT(MOD_LALT,KC_QUOT),
+    KC_NO , KC_Z , KC_X , KC_C , KC_V , KC_B               , KC_LBRC            ,    KC_RBRC            , KC_N                , KC_M , KC_COMM, KC_DOT, KC_SLSH, MT(MOD_LGUI,KC_BSLS),
+    KC_NO , MO(2), KC_NO, KC_NO, KC_NO, MT(MOD_LSFT,KC_SPC), MT(MOD_LCTL,KC_DEL),    MT(MOD_RCTL,KC_ENT), MT(MOD_RSFT,KC_BSPC), MO(1), KC_NO  , KC_NO , KC_NO  , KC_NO
   ),
 
   [1] = LAYOUT_universal(
-    S(KC_ESC), S(KC_1)  , KC_LBRC  , S(KC_3)  , S(KC_4)  , S(KC_5)  ,                                  KC_EQL   , S(KC_6)  ,S(KC_QUOT), S(KC_8)  , S(KC_9)  ,S(KC_INT1),
-    S(KC_DEL), S(KC_Q)  , S(KC_W)  , S(KC_E)  , S(KC_R)  , S(KC_T)  ,                                  S(KC_Y)  , S(KC_U)  , S(KC_I)  , S(KC_O)  , S(KC_P)  ,S(KC_INT3),
-    S(KC_TAB), S(KC_A)  , S(KC_S)  , S(KC_D)  , S(KC_F)  , S(KC_G)  ,                                  S(KC_H)  , S(KC_J)  , S(KC_K)  , S(KC_L)  , KC_QUOT  , S(KC_2)  ,
-    _______  , S(KC_Z)  , S(KC_X)  , S(KC_C)  , S(KC_V)  , S(KC_B)  ,S(KC_RBRC),           S(KC_NUHS), S(KC_N)  , S(KC_M)  ,S(KC_COMM), S(KC_DOT),S(KC_SLSH),S(KC_RSFT),
-    _______  ,S(KC_LCTL),S(KC_LALT),S(KC_LGUI), _______  , _______  , _______  ,            _______  , _______  , _______  ,S(KC_RGUI), _______  , S(KC_RALT), _______
+    KC_F12 , KC_F1, KC_F2  , KC_F3  , KC_F4  , KC_F5  ,                      KC_F6  , KC_F7  , KC_F8  , KC_F9  , KC_F10, KC_F11 ,
+    KC_TRNS, KC_NO, KC_PGUP, KC_UP  , KC_PGDN, KC_NO  ,                      KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO , KC_NO  ,
+    KC_TRNS, KC_NO, KC_LEFT, KC_DOWN, KC_RGHT, KC_NO  ,                      KC_NO  , KC_BTN1, KC_BTN3, KC_BTN2, KC_NO , KC_TRNS,
+    KC_NO  , KC_NO, KC_HOME, KC_NO  , KC_END , KC_NO  , KC_NO  ,    KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO , KC_TRNS,
+    KC_NO  , KC_NO, KC_NO  , KC_NO  , KC_NO  , KC_TRNS, KC_TRNS,    KC_TRNS, KC_TRNS, KC_TRNS, KC_NO  , KC_NO  , KC_NO , KC_NO
   ),
 
   [2] = LAYOUT_universal(
-    SSNP_FRE , KC_F1    , KC_F2    , KC_F3    , KC_F4    , KC_F5    ,                                  KC_F6    , KC_F7    , KC_F8    , KC_F9    , KC_F10   , KC_F11   ,
-    SSNP_VRT , _______  , KC_7     , KC_8     , KC_9     , _______  ,                                  _______  , KC_LEFT  , KC_UP    , KC_RGHT  , _______  , KC_F12   ,
-    SSNP_HOR , _______  , KC_4     , KC_5     , KC_6     ,S(KC_SCLN),                                  KC_PGUP  , KC_BTN1  , KC_DOWN  , KC_BTN2  , KC_BTN3  , _______  ,
-    _______  , _______  , KC_1     , KC_2     , KC_3     ,S(KC_MINS), S(KC_8)  ,            S(KC_9)  , KC_PGDN  , _______  , _______  , _______  , _______  , _______  ,
-    _______  , _______  , KC_0     , KC_DOT   , _______  , _______  , _______  ,             KC_DEL  , _______  , _______  , _______  , _______  , _______  , _______
-  ),
-
-  [3] = LAYOUT_universal(
-    RGB_TOG  , AML_TO   , AML_I50  , AML_D50  , _______  , _______  ,                                  RGB_M_P  , RGB_M_B  , RGB_M_R  , RGB_M_SW , RGB_M_SN , RGB_M_K  ,
-    RGB_MOD  , RGB_HUI  , RGB_SAI  , RGB_VAI  , _______  , _______  ,                                  RGB_M_X  , RGB_M_G  , RGB_M_T  , RGB_M_TW , _______  , _______  ,
-    RGB_RMOD , RGB_HUD  , RGB_SAD  , RGB_VAD  , _______  , _______  ,                                  CPI_D1K  , CPI_D100 , CPI_I100 , CPI_I1K  , KBC_SAVE , KBC_RST  ,
-    _______  , _______  , SCRL_DVD , SCRL_DVI , SCRL_MO  , SCRL_TO  , EE_CLR   ,            EE_CLR   , KC_HOME  , KC_PGDN  , KC_PGUP  , KC_END   , _______  , _______  ,
-    QK_BOOT  , _______  , KC_LEFT  , KC_DOWN  , KC_UP    , KC_RGHT  , _______  ,            _______  , KC_BSPC  , _______  , _______  , _______  , _______  , QK_BOOT
-  ),
-
-  [4] = LAYOUT_universal(
-    _______  , _______   , _______  , _______  , _______  , _______  ,                                  _______  , _______  , _______  , _______ , _______ , _______  ,
-    _______  , _______  , _______  , _______  , _______  , _______  ,                                  _______  , _______  , _______  , _______ , _______  , _______  ,
-    _______ , _______  , _______  , _______  , _______  , _______  ,                                  _______  , _______ , _______ , _______  , _______ , _______  ,
-    _______  , _______  , _______ , _______ , _______  , _______  , _______   ,            _______   , _______  , _______  , _______  , _______   , _______  , _______  ,
-    _______  , _______  , _______  , _______  , _______    , _______  , _______  ,            _______  , _______  , _______  , _______  , _______  , _______  , _______
-  ),
-
-  [5] = LAYOUT_universal(
-    _______  , _______   , _______  , _______  , _______  , _______  ,                                  _______  , _______  , _______  , _______ , _______ , _______  ,
-    _______  , _______  , _______  , _______  , _______  , _______  ,                                  _______  , _______  , _______  , _______ , _______  , _______  ,
-    _______ , _______  , _______  , _______  , _______  , _______  ,                                  _______  , _______ , _______ , _______  , _______ , _______  ,
-    _______  , _______  , _______ , _______ , _______  , _______  , _______   ,            _______   , _______  , _______  , _______  , _______   , _______  , _______  ,
-    _______  , _______  , _______  , _______  , _______    , _______  , _______  ,            _______  , _______  , _______  , _______  , _______  , _______  , _______
-  ),
-
-  [6] = LAYOUT_universal(
-    _______  , _______   , _______  , _______  , _______  , _______  ,                                  _______  , _______  , _______  , _______ , _______ , _______  ,
-    _______  , _______  , _______  , _______  , _______  , _______  ,                                  _______  , _______  , _______  , _______ , _______  , _______  ,
-    _______ , _______  , _______  , _______  , _______  , _______  ,                                  _______  , _______ , _______ , _______  , _______ , _______  ,
-    _______  , _______  , _______ , _______ , _______  , _______  , _______   ,            _______   , _______  , _______  , _______  , _______   , _______  , _______  ,
-    _______  , _______  , _______  , _______  , _______    , _______  , _______  ,            _______  , _______  , _______  , _______  , _______  , _______  , _______
-  ),
-
-  [7] = LAYOUT_universal(
-    _______  , _______   , _______  , _______  , _______  , _______  ,                                  _______  , _______  , _______  , _______ , _______ , _______  ,
-    _______  , _______  , _______  , _______  , _______  , _______  ,                                  _______  , _______  , _______  , _______ , _______  , _______  ,
-    _______ , _______  , _______  , _______  , _______  , _______  ,                                  _______  , _______ , _______ , _______  , _______ , _______  ,
-    _______  , _______  , _______ , _______ , _______  , _______  , _______   ,            _______   , _______  , _______  , _______  , _______   , _______  , _______  ,
-    _______  , _______  , _______  , _______  , _______    , _______  , _______  ,            _______  , _______  , _______  , _______  , _______  , _______  , _______
+    KBC_SAVE, CPI_I100, CPI_D100, CPI_I1K, CPI_D1K, SCRL_TO,                     SCRL_MO, SCRL_DVI, SCRL_DVD, AML_TO , AML_I50  , AML_D50 ,
+    KC_NO   , KC_NO   , KC_NO   , KC_NO  , KC_NO  , KC_NO  ,                     KC_NO  , KC_NO   , KC_NO   , KC_NO  , KC_NO    , SSNP_VRT,
+    KC_NO   , KC_NO   , KC_NO   , KC_NO  , KC_NO  , KC_NO  ,                     KC_NO  , KC_NO   , KC_NO   , KC_NO  , KC_NO    , SSNP_HOR,
+    KC_NO   , KC_NO   , KC_NO   , KC_NO  , KC_NO  , KC_NO  , QK_BOOT,    EE_CLR, KC_NO  , KC_NO   , KC_NO   , KC_NO  , KC_NO    , SSNP_FRE,
+    KC_NO   , KC_NO   , KC_NO   , KC_NO  , KC_NO  , KC_NO  , KC_NO  ,    KC_NO , KC_NO  , KC_NO   , KC_NO   , KC_NO  , QK_REBOOT, KBC_RST
   ),
 };
 // clang-format on
 
 layer_state_t layer_state_set_user(layer_state_t state) {
-    // Auto enable scroll mode when the highest layer is 3
-    keyball_set_scroll_mode(get_highest_layer(state) == 3);
+    bool scroll_enabled = layer_state_cmp(state, 0);
+    keyball_set_scroll_mode(scroll_enabled);
     return state;
+}
+
+// Leave a quick tap for `TT`s keys.
+uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t *record) {
+  switch (keycode) {
+      case TT(1):
+      case TT(2):
+      case TT(3):
+          return TAPPING_TERM;
+      default:
+          return QUICK_TAP_TERM;
+  }
 }
 
 #ifdef OLED_ENABLE
